@@ -10,16 +10,16 @@
 
 <script>
     window.onload = function() {
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-        });
+        const params = new URLSearchParams(window.location.search)
+
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-        let value = params.code; // "some_value"
-        if (value) {
-            window.location.href = "com.steamx.iLawyer://auth/handler?code=" + value;
-        } else {
-            window.location.href = "com.steamx.iLawyer://auth/handler?error=no_code";
+        let final_url = []
+        for (const [key, value] of params) {
+            final_url.push(key + '=' + value)
         }
+        console.log(final_url.join('&'))
+        window.location.href = "com.steamx.iLawyer://auth/handler?" + final_url.join("&") 
+        
         
     }
 </script>
