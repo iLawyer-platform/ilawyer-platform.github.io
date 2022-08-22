@@ -1,1 +1,25 @@
-login success
+<h1>
+    Login success
+</h1>
+
+<a href="com.steamx.iLawyer://auth/handler">
+    <button>
+        Go back
+    </button>
+</a>
+
+<script>
+    window.onload = function() {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+        });
+        // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+        let value = params.code; // "some_value"
+        if (value) {
+            window.location.href = "com.steamx.iLawyer://auth/handler?code=" + value;
+        } else {
+            window.location.href = "com.steamx.iLawyer://auth/handler?error=no_code";
+        }
+        
+    }
+</script>
