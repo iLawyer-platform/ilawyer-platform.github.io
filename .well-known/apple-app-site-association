@@ -1,5 +1,20 @@
 {
+    "applinks":{
+        "details":[
+           {
+              "appIDs":[
+                 "6443803225.com.dynamica.vip.iLawyer"
+              ],
+              "components":[
+                 {
+                     "/": ""
+                 }
+              ]
+           }
+        ]
+    },
     "webcredentials": {
         "apps": ["6443803225.com.dynamica.vip.iLawyer"]
-    }
+    },
+    "appclips": {}
 }
